@@ -17,7 +17,7 @@ const ProductOverview = props => {
                   <ProductItem
                   image={itemData.item.imageUrl}
                   title={itemData.item.title}
-                  price={itemData.item.price}
+                  price={itemData.item.price.toFixed(2)}
                   onViewDetail={() => {
                     props.navigation.navigate('ProductDetail',{
                       productId: itemData.item.id,
