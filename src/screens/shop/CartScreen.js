@@ -43,12 +43,25 @@ const CartScreen = props => {
         <Button
           color ={Colors.accent}
           title=' Order Now'
-          disabled = {cartItems === 0}/>
+          disabled = { cartItems === 0 }/>
       </View>
       <View>
        <Text>cart items</Text>
       </View>
+      <View>
+        <FlatList data = {cartItems}
+                  keyExtractor={item => item.productId}
+                  renderItem={itemData => <CartItem
+                    quantity={itemData.item.quantity}
+                    title={itemData.item.productTitle}
+                    amount={itemData.item.sum}
+                    onRemove={() =>{
+                    }}
+                  />
+                  }
+        />
 
+      </View>
     </View>
   );
 };
