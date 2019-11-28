@@ -32,14 +32,18 @@ const ProductOverview = props => {
     );
 };
 
-ProductOverview.navigationOptions = {
+ProductOverview.navigationOptions = navData => {
+  return{
     headerTitle: 'All products',
     headerRight:
       <HeaderButtons HeaderButtonComponent = { HeaderButton }>
         <item title = 'Cart'
               iconName = { Platform.OS === 'android' ? 'md-cart': 'ios-cart'}
-              onPress={() => {}}/>
+              onPress={() => {
+                navData.navigation.navigate('Cart')
+              }}/>
       </HeaderButtons>
+  };
 };
 
 export default ProductOverview;
