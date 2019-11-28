@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="964a126a-ca9c-433f-b085-cdf29084b15f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/UI/HeaderButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/Colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigations/shopNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigations/shopNavigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/shop/ProductDetailScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/shop/ProductDetailScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/shop/ProductOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/shop/ProductOverview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/dummy-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/dummy-data.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -85,11 +77,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/constants/Colors.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/data/dummy-data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="16" column="101" selection-start-line="16" selection-start-column="101" selection-end-line="16" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -111,15 +112,6 @@
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/action/cart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -146,7 +138,6 @@
         <option value="$PROJECT_DIR$/src/store/action/products.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/products.js" />
         <option value="$PROJECT_DIR$/src/models/product.js" />
-        <option value="$PROJECT_DIR$/src/data/dummy-data.js" />
         <option value="$PROJECT_DIR$/src/components/shop/ProductItem.js" />
         <option value="$PROJECT_DIR$/src/store/action/cart.js" />
         <option value="$PROJECT_DIR$/src/models/cart-items.js" />
@@ -157,6 +148,7 @@
         <option value="$PROJECT_DIR$/src/screens/shop/ProductOverview.js" />
         <option value="$PROJECT_DIR$/src/navigations/shopNavigator.js" />
         <option value="$PROJECT_DIR$/src/constants/Colors.js" />
+        <option value="$PROJECT_DIR$/src/data/dummy-data.js" />
       </list>
     </option>
   </component>
@@ -217,6 +209,12 @@
               <item name="shopApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shopApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shopApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shopApp" type="b2602c69:ProjectViewProjectNode" />
@@ -306,12 +304,12 @@
       <option name="presentableId" value="Default" />
       <updated>1574662524337</updated>
       <workItem from="1574662525718" duration="10069000" />
-      <workItem from="1574746154462" duration="30905000" />
+      <workItem from="1574746154462" duration="32560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40974000" />
+    <option name="totallyTimeSpent" value="42629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="0" />
@@ -409,13 +407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="239" column="4" selection-start-line="239" selection-start-column="4" selection-end-line="239" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/dummy-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="138" selection-start-line="8" selection-start-column="138" selection-end-line="8" selection-end-column="138" />
         </state>
       </provider>
     </entry>
@@ -531,9 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/shop/CartScreen.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/navigations/shopNavigator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -555,6 +543,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/shop/CartScreen.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/dummy-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="16" column="101" selection-start-line="16" selection-start-column="101" selection-end-line="16" selection-end-column="101" />
         </state>
       </provider>
     </entry>
