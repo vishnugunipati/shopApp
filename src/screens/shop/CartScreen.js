@@ -1,37 +1,54 @@
 import React from 'react';
-import {Text, Button, ScrollView, View, StyleSheet, FlatList } from 'react-native';
-import {useSelector} from 'react-redux';
+import {Text, Button, View, StyleSheet, FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
 import Colors from "../../constants/Colors";
+import CartItem from "../../components/shop/CartItems";
 
 
 const CartScreen = props => {
   const cartTotalAmount = useSelector(state => state.cart.totalAmount);
+  // const cartItems = useSelector(state => {
+  //   const transformedCartItems = [];
+  //   for (const key in state.cart.items) {
+  //    transformedCartItems.push({
+  //      productId: key,
+  //      productTitle: state.cart.items[key].productTitle,
+  //      productPrice: state.cart.itmes[key].productPrice,
+  //      quantity: state.cart.items[key].quantity,
+  //      sum: state.cart.items[key].sum
+  //    });
+  //   }
+  //   return transformedCartItems;
+  // });
+
   const cartItems = useSelector(state => {
     const transformedCartItems = [];
-    for(const key in state.cart.items) {
+    for (const key in state.cart.items) {
      transformedCartItems.push({
        productId: key,
        productTitle: state.cart.items[key].productTitle,
-       productPrice: state.cart.itmes[key].productPrice,
+       productPrice: state.cart.items[key].productPrice,
        quantity: state.cart.items[key].quantity,
        sum: state.cart.items[key].sum
-     });
+     })
     }
     return transformedCartItems;
-
   });
 
   return(
     <View style = {styles.screen}>
       <View style ={ styles.summery}>
         <Text style ={ styles.summaryText}>
-          Total:<Text style = {styles.amount}>${cartTotalAmount}</Text></Text>
-        <Button title=' Order Now'
-                disabled = {cartItems.length === 0}/>
+          Total:<Text style = {styles.amount}>${cartTotalAmount.toFixed(2)}</Text></Text>
+        <Button
+          color ={Colors.accent}
+          title=' Order Now'
+          disabled = {cartItems === 0}/>
       </View>
       <View>
-        <Text>Cart Items</Text>
+       <Text>cart items</Text>
       </View>
+
     </View>
   );
 };

@@ -25,9 +25,9 @@ const ProductOverview = props => {
                     });
                   }}
                   onAddToCart={() => {
-                    dispatch(cartActions.addTocart(itemData.item))
-                  }}
-                />)}
+                    dispatch(cartActions.addToCart(itemData.item));
+                  }}/>
+                )}
       />
     );
 };
