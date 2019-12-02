@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Colors from "../../constants/Colors";
 import CartItem from "../../components/shop/CartItems";
 import * as cartAction from'../../store/action/cart';
+import * as ordersAction from '../../store/action/orders';
 
 
 const CartScreen = props => {
@@ -48,7 +49,11 @@ const CartScreen = props => {
         <Button
           color ={Colors.accent}
           title=' Order Now'
-          disabled = { cartItems === 0 }/>
+          disabled = { cartItems === 0 }
+          onPress={() => {
+            dispatch(ordersAction.addOrder(cartItems, cartTotalAmount))
+          }}
+        />
       </View>
       <View>
         <FlatList data = {cartItems}
@@ -67,6 +72,10 @@ const CartScreen = props => {
       </View>
     </View>
   );
+};
+
+CartScreen.navigationOptions = {
+  headerTitle: 'Your Cart'
 };
 
 const styles = StyleSheet.create({

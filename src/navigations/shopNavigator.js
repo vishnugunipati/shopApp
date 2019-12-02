@@ -1,25 +1,66 @@
+import React from 'react';
 import { createAppContainer} from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import { Platform } from 'react-native';
+import {Ionicons} from '@expo/vector-icons'
 
 import ProductOverview from '../screens/shop/ProductOverview';
 import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
 import CartScreen from '../screens/shop/CartScreen';
+import OrdersScreen from '../screens/shop/OrdersScreen';
 import Colors from '../constants/Colors';
+
+const defaultNavOptions = {
+  headerStyles: {
+    backgroundColor: Platform.OS === 'android' ?  Colors.primary : ''
+  },
+  headerTintColor: Platform.OS === 'android' ?  Colors.primary : ''
+};
+
 
 const ProductsNavigator = createStackNavigator({
     productOverviewScreen: ProductOverview,
     ProductDetail: ProductDetailScreen,
     Cart : CartScreen
-}, {
-    defaultNavigationOptions: {
-      headerStyles: {
-        backgroundColor: Platform.OS === 'android' ?  Colors.primary : ''
-      },
-        headerTintColor: Platform.OS === 'android' ?  Colors.primary : ''
-    }
+  },
+  {
+    navigationOptions:{
+      drawerIcon: drawerConfig => <Ionicons
+        name={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'}
+        size={23}
+        color={drawerConfig.tintColor}
+      />
+    },
+    defaultNavigationOptions: defaultNavOptions
+
 });
 
-export default createAppContainer(ProductsNavigator);
+const OrdersNavigator = createStackNavigator({
+  Orders: OrdersScreen
+  },
+  {
+    navigationOptions:{
+      drawerIcon: drawerConfig => <Ionicons
+        name={Platform.OS === 'android' ? 'md-list' : 'ios-list'}
+        size={23}
+        color={drawerConfig.tintColor}
+      />
+    },
+    defaultNavigationOptions: defaultNavOptions
+  }
+  );
+
+
+const ShopNavigator = createDrawerNavigator({
+  Products: ProductsNavigator,
+  Orders: OrdersNavigator
+},{
+  contentOptions:{
+    activeTintColor: Colors.primary
+  }
+});
+
+export default createAppContainer(ShopNavigator);
 
 
