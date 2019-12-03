@@ -22,7 +22,7 @@ const ProductOverview = props => {
                   onViewDetail={() => {
                     props.navigation.navigate('ProductDetail',{
                       productId: itemData.item.id,
-                      productTitle: itemData.item.titel
+                      productTitle: itemData.item.title
                     });
                   }}
                   onAddToCart={() => {

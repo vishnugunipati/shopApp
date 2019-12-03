@@ -5,24 +5,11 @@ import Colors from "../../constants/Colors";
 import CartItem from "../../components/shop/CartItems";
 import * as cartAction from'../../store/action/cart';
 import * as ordersAction from '../../store/action/orders';
+import OrdersScreen from "./OrdersScreen";
 
 
 const CartScreen = props => {
   const cartTotalAmount = useSelector(state => state.cart.totalAmount);
-  // const cartItems = useSelector(state => {
-  //   const transformedCartItems = [];
-  //   for (const key in state.cart.items) {
-  //    transformedCartItems.push({
-  //      productId: key,
-  //      productTitle: state.cart.items[key].productTitle,
-  //      productPrice: state.cart.itmes[key].productPrice,
-  //      quantity: state.cart.items[key].quantity,
-  //      sum: state.cart.items[key].sum
-  //    });
-  //   }
-  //   return transformedCartItems;
-  // });
-
   const cartItems = useSelector(state => {
     const transformedCartItems = [];
     for (const key in state.cart.items) {
@@ -63,6 +50,7 @@ const CartScreen = props => {
                       quantity={itemData.item.quantity}
                       title={itemData.item.productTitle}
                       amount={itemData.item.sum}
+                      deletable
                       onRemove={() =>{
                         dispatch(cartAction.removeFromCart(itemData.item.productId));
                       }}

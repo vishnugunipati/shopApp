@@ -1,8 +1,10 @@
 import React from 'react';
-import  {ScrollView, Text, View, Button, StyleSheet, Image} from 'react-native';
+import {ScrollView, Text, View, Button, StyleSheet, Image, Platform} from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import Colors from "../../constants/Colors";
 import * as cartActions from '../../store/action/cart'
+import {HeaderButtons} from "react-navigation-header-buttons";
+import HeaderButton from "../../components/UI/HeaderButtons";
 
 const ProductDetailScreen = props => {
   const productId = props.navigation.getParam('productId');
@@ -29,7 +31,18 @@ const ProductDetailScreen = props => {
 
 ProductDetailScreen.navigationOption = navData => {
   return{
-    headerTitle: navData.navigation.getParam('productTitle')
+    headerTitle: navData.navigation.getParam('productTitle'),
+
+    headerRight: (
+      <HeaderButtons HeaderButtonComponent = { HeaderButton }>
+        <item title = 'Cart'
+              iconName = { Platform.OS === 'android' ? 'md-cart': 'ios-cart'}
+              onPress={() => {
+                navData.navigation.navigate('Cart')
+              }}
+        />
+      </HeaderButtons>
+    )
   }
 };
 
