@@ -4,7 +4,7 @@ class Product {
       this.ownerId = ownerId;
       this.title = title;
       this.imageUrl = imageUrl;
-      this.descrption = description;
+      this.description = description;
       this.price = price;
   }
 }

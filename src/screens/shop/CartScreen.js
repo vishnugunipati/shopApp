@@ -32,13 +32,14 @@ const CartScreen = props => {
     <View style = {styles.screen}>
       <View style ={ styles.summery}>
         <Text style ={ styles.summaryText}>
-          Total:<Text style = {styles.amount}>${cartTotalAmount.toFixed(2)}</Text></Text>
+          Total:<Text style = {styles.amount}>${Math.round(cartTotalAmount.toFixed(2)*100/100)}</Text></Text>
         <Button
           color ={Colors.accent}
           title=' Order Now'
           disabled = { cartItems === 0 }
           onPress={() => {
             dispatch(ordersAction.addOrder(cartItems, cartTotalAmount))
+            props.navigation.navigate('Orders')
           }}
         />
       </View>
