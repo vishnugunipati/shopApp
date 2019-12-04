@@ -5,7 +5,7 @@ import Colors from "../../constants/Colors";
 import CartItem from "../../components/shop/CartItems";
 import * as cartAction from'../../store/action/cart';
 import * as ordersAction from '../../store/action/orders';
-import OrdersScreen from "./OrdersScreen";
+import Card from '../../components/UI/Card';
 
 
 const CartScreen = props => {
@@ -30,7 +30,7 @@ const CartScreen = props => {
 
   return(
     <View style = {styles.screen}>
-      <View style ={ styles.summery}>
+      <Card style ={ styles.summery}>
         <Text style ={ styles.summaryText}>
           Total:<Text style = {styles.amount}>${Math.round(cartTotalAmount.toFixed(2)*100/100)}</Text></Text>
         <Button
@@ -42,7 +42,7 @@ const CartScreen = props => {
             props.navigation.navigate('Orders')
           }}
         />
-      </View>
+      </Card>
       <View>
         <FlatList data = {cartItems}
                   keyExtractor={item => item.productId}
@@ -77,14 +77,7 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     marginBottom:20,
     padding:10,
-    borderRadius: 10,
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.26,
-    shadowRadius: 8,
-    elevation: 5,
-    margin: 7,
-    backgroundColor:'white',
+    margin: 7
   },
   summaryText:{
     fontSize:18,

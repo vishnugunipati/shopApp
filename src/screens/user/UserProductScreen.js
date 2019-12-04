@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, FlatList, Platform} from 'react-native';
+import {Button, FlatList, Platform, Alert} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
 import ProductItem from '../../components/shop/ProductItem';
@@ -11,6 +11,15 @@ import * as productActions from "../../store/action/products";
 const UserProductsScreen = props => {
   const userProducts = useSelector(state => state.products.userProducts);
   const dispatch = useDispatch();
+
+  const deleteHandler = (id) => {
+    Alert.alert('Are you sure?', 'Do u Want to delete this item?',[
+      {text: 'No', style: 'default' },
+        {text: 'Yes', style: 'destructive', onPress: () => {
+            dispatch(productActions.deleteProduct(id))
+          }}
+      ])
+  };
 
   const editProductHandler = (id) => {
     props.navigation.navigate('EditProduct',{ productId: id});
@@ -34,9 +43,7 @@ const UserProductsScreen = props => {
                 }}/>
         <Button color = {Color.primary}
                 title= 'Delete'
-                onPress={() => {
-                  dispatch(productActions.deleteProduct(itemData.item.id))
-                }}/>
+                onPress={deleteHandler.bind(this, itemData.item.id)}/>
       </ProductItem>
     }
     />
