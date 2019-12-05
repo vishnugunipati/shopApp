@@ -36,7 +36,7 @@ const CartScreen = props => {
         <Button
           color ={Colors.accent}
           title=' Order Now'
-          disabled = { cartItems === 0 }
+          disabled = { cartItems.length === 0 }
           onPress={() => {
             dispatch(ordersAction.addOrder(cartItems, cartTotalAmount))
             props.navigation.navigate('Orders')
